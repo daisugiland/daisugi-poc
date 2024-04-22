@@ -18,7 +18,7 @@
     "check": "biome check src --apply-unsafe",
     "format": "biome format src --write",
     "prepublishOnly": "pnpm run test && pnpm run build",
-    "tdd": "tsc-watch --build ./tsconfig.json --onSuccess \"node --test --test-reporter spec dist/esm/__tests__/*.js\"",
+    "tdd": "tsc --build && tsc --build --watch --preserveWatchOutput & node --test --inspect --watch dist/esm/__tests__/*.js",
     "test": "tsc --build ./tsconfig.json && node --test --test-reporter spec dist/esm/__tests__/*.js"
   },
   "contributors": [
